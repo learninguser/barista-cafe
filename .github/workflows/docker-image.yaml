@@ -17,7 +17,8 @@ jobs:
     - name: Push to AWS ECR
       uses: kciter/aws-ecr-action@v5
       with:
+        account_id: ${{ env.ACCOUNT_ID }}
         access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        region: "us-east-1"
+        region: ${{ env.AWS_REGION }}
         repo: "barista_cafe"
